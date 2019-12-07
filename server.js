@@ -48,6 +48,10 @@ function handleGetTypes(req, res) {
   res.json(validTypes);
 }
 
+app.get('/', function(req, res) {
+  res.redirect('/types');
+});
+
 app.get('/types', handleGetTypes);
 
 app.get('/pokemon', function handleGetPokemon(req, res) {
@@ -80,7 +84,6 @@ app.use((error, req, res, next) => {
   }
   res.status(500).json(response);
 });
+process.env.PORT || 8000;
 
-const PORT = process.env.PORT || 8000;
-
-app.listen(PORT);
+app.listen(process.env.PORT || 8000);
