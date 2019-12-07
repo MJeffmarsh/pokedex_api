@@ -48,10 +48,6 @@ function handleGetTypes(req, res) {
   res.json(validTypes);
 }
 
-app.get('/', function(req, res) {
-  res.redirect('/types');
-});
-
 app.get('/types', handleGetTypes);
 
 app.get('/pokemon', function handleGetPokemon(req, res) {
